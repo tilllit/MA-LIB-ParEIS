@@ -1,0 +1,30 @@
+﻿<Window x:Class="EIS_Acquisition_Utilllity.Pages.TestBench.TB_RAW_Values_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+        xmlns:local="clr-namespace:EIS_Acquisition_Utilllity.Pages.TestBench"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="RAW - Values" Height="600" Width="800">
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+            <Button Name="Size_Btn" Content="Size" Height="25" Width="70" Click="Size_Btn_Click" />
+            <Button Name="Scale_Btn" Content="Re-Scale" Height="25" Width="70" Click="Scale_Btn_Click" Margin="10,0,0,0" />
+        </StackPanel>
+
+        <ScottPlot:WpfPlot Name="RAW_Plot" MinHeight="400" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+
+    </Grid>
+
+
+</Window>

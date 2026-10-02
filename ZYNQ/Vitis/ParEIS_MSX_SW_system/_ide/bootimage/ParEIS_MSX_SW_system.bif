@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/sw/HW_Export_V1/boot/fsbl.elf
+	C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\ParEIS_MSX_SW\_ide\bitstream\HW_Export_V2.bit
+	C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/Debug/ParEIS_MSX_SW.elf
+}

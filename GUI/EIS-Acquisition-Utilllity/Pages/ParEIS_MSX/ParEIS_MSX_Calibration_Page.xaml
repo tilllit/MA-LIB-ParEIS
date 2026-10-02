@@ -1,0 +1,97 @@
+﻿<Page x:Class="EIS_Acquisition_Utilllity.Pages.ParEIS_MSX.ParEIS_MSX_Calibration_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EIS_Acquisition_Utilllity.Pages.ParEIS_MSX"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ParEIS_MSX_Calibration_Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Column="0" Grid.RowSpan="2">
+
+            <GroupBox Header="Supply" Margin="10">
+                <StackPanel Margin="5">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="IP: " Width="40" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_DE_IP" Text="192.168.1.100" Height="20" Width="100" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Port: " Width="40" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_DE_Port" Text="8462" Height="20" Width="100" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="DE_Connect_Btn" Height="25" Width="75" Content="Connect" Margin="10" Click="DE_Connect_Btn_Click" />
+                        <Button Name="DE_Disconnect_Btn" Height="25" Width="75" Content="Disconnect" IsEnabled="False" Margin="10" Click="DE_Disconnect_Btn_Click" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="DE_Enable_Btn" Height="25" Width="75" Content="ON" IsEnabled="False" Margin="10" Click="DE_Enable_Btn_Click" />
+                        <Button Name="DE_Disable_Btn" Height="25" Width="75" Content="OFF" IsEnabled="False" Margin="10" Click="DE_Disable_Btn_Click" />
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox>
+
+            <Button Name="Load_Config_Btn" Height="25" Width="100" Content="Load Config" Margin="10" Click="Load_Config_Btn_Click" />
+
+        </StackPanel>
+
+        
+        
+        
+        
+        
+        
+
+        <GroupBox Header="Config" Margin="10" Grid.Row="1" Grid.Column="1" >
+            <StackPanel Margin="5">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Voltage: " />
+                    <TextBox Name="TB_Voltage" Height="20" Width="50" Text="3.100" HorizontalContentAlignment="Right" />
+                    <Label Content="[V]" />
+
+                    <Label Content="Current:" Margin="30,0,0,0" />
+                    <TextBox Name="TB_Current" Height="20" Width="50" Text="0.300" HorizontalContentAlignment="Right" />
+                    <Label Content="[A]" />
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Label Content="Mode:" Margin="5,0,0,0" />
+                    <ComboBox Name="CB_Mode" Width="70" Margin="5,0,0,0">
+                        <ComboBoxItem IsSelected="True">Current</ComboBoxItem>
+                        <ComboBoxItem>Voltage</ComboBoxItem>
+                    </ComboBox>
+
+                    <Button Name="Cal_Start_Btn" Height="25" Width="75" Content="Start" Margin="40,0,0,0" Click="Cal_Start_Btn_Click" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="CalNew_Btn" Height="25" Width="90" Content="New Calib." Margin="5" Click="CalNew_Btn_Click" />
+                    <Button Name="ChooseCal_Btn" Height="25" Width="90" Content="Choose" Margin="5" Click="ChooseCal_Btn_Click" />
+                    <Button Name="CalcCalib_Btn" Height="25" Width="90" Content="Calc." Margin="5" Click="CalcCalib_Btn_Click" />
+                </StackPanel>
+
+            </StackPanel>
+
+        </GroupBox>
+
+
+    </Grid>
+</Page>

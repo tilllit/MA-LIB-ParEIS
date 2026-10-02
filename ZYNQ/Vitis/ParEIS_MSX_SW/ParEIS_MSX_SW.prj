@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="ParEIS_MSX_SW" location="C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW" platform="C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/HW_Export_V1.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="ParEIS_MSX_SW_system" sysConfig="HW_Export_V1" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="ba7010793fcc92acbc2ccb0311f8d7b8">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1930497686">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1125939836" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

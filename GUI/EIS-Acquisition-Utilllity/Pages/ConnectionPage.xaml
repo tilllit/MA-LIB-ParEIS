@@ -1,0 +1,89 @@
+﻿<Page x:Class="EIS_Acquisition_Utilllity.Pages.ConnectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EIS_Acquisition_Utilllity.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ConnectionPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="FPGA Conecion" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Content="IP: "/>
+                    <TextBox Name="TB_IP" Width="90" Height="20" HorizontalContentAlignment="Right" Text="192.168.1.11"/>
+                    <Label Content=" CMD Port: "/>
+                    <TextBox Name="TB_CMD_Port" Width="40" Height="20" HorizontalContentAlignment="Right" Text="5001"/>
+                    <Label Content=" Data Port: "/>
+                    <TextBox Name="TB_DATA_Port" Width="40" Height="20" HorizontalContentAlignment="Right" Text="5003"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="Connect_Btn" Width="90" Height="30" Content="Connect" Click="Connect_Btn_Click" Margin="70,10,10,10" />
+                    <Button Name="Disonnect_Btn" Width="90" Height="30" Content="Disconnect" Click="Disonnect_Btn_Click" Margin="10" IsEnabled="False" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10">
+
+            <GroupBox Header="CMD" >
+                <StackPanel Margin="5">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Nr. Samples: " Width="100" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_NrSamples" Width="45" Text="1000" Height="20" HorizontalContentAlignment="Right" />
+                        <Label Content="Nr. M-Cards: " Width="100" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_NrCards" Width="45" Text="3" Height="20" HorizontalContentAlignment="Right" IsEnabled="False" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Sample Freq: " Width="100" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_Fsample" Width="45" Text="200" Height="20" HorizontalContentAlignment="Right" />
+                        <Label Content="Serial Freq: " Width="100" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_Fserial" Width="45" Text="100000" Height="20" HorizontalContentAlignment="Right" IsEnabled="False" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Button Name="ACC_Setup_Btn" Width="70" Height="25" Content="Setup" Click="ACC_Setup_Btn_Click" Margin="0,0,10,0" />
+                        <Button Name="Start_Btn" Width="70" Height="25" Content="START" Click="Start_Btn_Click" Margin="0,00,0,0" />
+                    </StackPanel>
+                    
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Send" Margin="0,20,0,0">
+                <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Send: "/>
+                        <TextBox Name="TB_Send" Width="200" Height="20" HorizontalContentAlignment="Right"/>
+                    </StackPanel>
+                    <Button Name="Send_Btn" Width="70" Height="25" Content="Send" Click="Send_Btn_Click" Margin="0,10,0,0" IsEnabled="False"/>
+                </StackPanel>
+            </GroupBox>
+
+        </StackPanel>
+
+
+        <GroupBox Header="Console" Margin="10" Grid.Row="1" Grid.Column="0">
+            <ListBox Name="LB_Console" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </GroupBox>
+
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,135 @@
+﻿<Page x:Class="EIS_Acquisition_Utilllity.Pages.TestBench.TB_Calibration_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EIS_Acquisition_Utilllity.Pages.TestBench"
+      mc:Ignorable="d" 
+      xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TB_Calibration_Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Column="0" Grid.RowSpan="2">
+
+            <GroupBox Header="Supply" Margin="10">
+                <StackPanel Margin="5">
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="IP: " Width="40" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_DE_IP" Text="192.168.1.100" Height="20" Width="100" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Port: " Width="40" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_DE_Port" Text="8462" Height="20" Width="100" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="DE_Connect_Btn" Height="25" Width="75" Content="Connect" Margin="10" Click="DE_Connect_Btn_Click" />
+                        <Button Name="DE_Disconnect_Btn" Height="25" Width="75" Content="Disconnect" IsEnabled="False" Margin="10" Click="DE_Disconnect_Btn_Click" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="DE_Enable_Btn" Height="25" Width="75" Content="ON" IsEnabled="False" Margin="10" Click="DE_Enable_Btn_Click" />
+                        <Button Name="DE_Disable_Btn" Height="25" Width="75" Content="OFF" IsEnabled="False" Margin="10" Click="DE_Disable_Btn_Click" />
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox>
+
+
+            <GroupBox Header="Multimeter" Margin="10">
+                <StackPanel Margin="5">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="IP: " Width="40" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_MM_IP" Text="192.168.1.227" Height="20" Width="100" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Port: " Width="40" HorizontalContentAlignment="Right" />
+                        <TextBox Name="TB_MM_Port" Text="5555" Height="20" Width="100" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="MM_Connect_Btn" Height="25" Width="75" Content="Connect" Margin="10" Click="MM_Connect_Btn_Click" />
+                        <Button Name="MM_Disconnect_Btn" Height="25" Width="75" Content="Disconnect" IsEnabled="False" Margin="10" Click="MM_Disconnect_Btn_Click" />
+                    </StackPanel>
+
+                    <Button Name="MM_SinglePoll_Btn" Height="25" Width="75" Content="Poll" IsEnabled="False" Margin="10" Click="MM_SinglePoll_Btn_Click" />
+
+                </StackPanel>
+            </GroupBox>
+
+
+            <Button Name="Load_Config_Btn" Height="25" Width="100" Content="Load Config" Margin="10" Click="Load_Config_Btn_Click" />
+
+        </StackPanel>
+
+
+        <ScottPlot:WpfPlot Name="Calib_Plot"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+
+
+        <GroupBox Header="Config" Margin="10" Grid.Row="1" Grid.Column="1" >
+            <StackPanel Margin="5">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Voltage: " />
+                    <TextBox Name="TB_Voltage" Height="20" Width="50" Text="3.100" HorizontalContentAlignment="Right" />
+                    <Label Content="[V]" />
+
+                    <Label Content="Current:" Margin="30,0,0,0" />
+                    <TextBox Name="TB_Current" Height="20" Width="50" Text="0.300" HorizontalContentAlignment="Right" />
+                    <Label Content="[A]" />
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Channel:" Margin="0,0,0,0" />
+                    <ComboBox Name="CB_Cannel" Width="80" Margin="5,0,0,0">
+                        <ComboBoxItem IsSelected="True">Channel 1</ComboBoxItem>
+                        <ComboBoxItem>Channel 2</ComboBoxItem>
+                        <ComboBoxItem>Channel 3</ComboBoxItem>
+                        <ComboBoxItem>Channel 4</ComboBoxItem>
+                        <ComboBoxItem>Channel 5</ComboBoxItem>
+                        <ComboBoxItem>Channel 6</ComboBoxItem>
+                        <ComboBoxItem>Channel 7</ComboBoxItem>
+                        <ComboBoxItem>Channel 8</ComboBoxItem>
+                        <ComboBoxItem>Channel 9</ComboBoxItem>
+                    </ComboBox>
+
+                    <Label Content="Mode:" Margin="5,0,0,0" />
+                    <ComboBox Name="CB_Mode" Width="70" Margin="5,0,0,0">
+                        <ComboBoxItem IsSelected="True">Voltage</ComboBoxItem>
+                        <ComboBoxItem>Current</ComboBoxItem>
+                    </ComboBox>
+
+                    <Button Name="Cal_Start_Btn" Height="25" Width="75" Content="Start" Margin="40,0,0,0" Click="Cal_Start_Btn_Click" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                    <Label Content="Avg. Measure:" />
+                    <TextBox Name="TB_Avg_Measure" Height="20" Width="120" HorizontalContentAlignment="Right" />
+                    <Label Content="[V] or [A]" />
+                    <Label Content="Avg. Channel:" Margin="20,0,0,0" />
+                    <TextBox Name="TB_Avg_Channel" Height="20" Width="70" HorizontalContentAlignment="Right" />
+                    <Label Content="[Cnt]" />
+                </StackPanel>
+
+            </StackPanel>
+
+        </GroupBox>
+
+
+    </Grid>
+</Page>

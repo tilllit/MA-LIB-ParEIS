@@ -1,0 +1,185 @@
+20:27:29 DEBUG : Logs will be stored at 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/IDE.log'.
+20:27:32 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\temp_xsdb_launch_script.tcl
+20:27:32 INFO  : Platform repository initialization has completed.
+20:27:33 INFO  : Registering command handlers for Vitis TCF services
+20:27:39 INFO  : XSCT server has started successfully.
+20:27:39 INFO  : Successfully done setting XSCT server connection channel  
+20:27:39 INFO  : plnx-install-location is set to ''
+20:27:39 INFO  : Successfully done setting workspace for the tool. 
+20:27:39 INFO  : Successfully done query RDI_DATADIR 
+20:28:33 INFO  : Result from executing command 'getProjects': HW_Export_V1
+20:28:33 INFO  : Result from executing command 'getPlatforms': 
+20:28:33 WARN  : An unexpected exception occurred in the module 'platform project logging'
+20:28:34 INFO  : Platform 'HW_Export_V1' is added to custom repositories.
+20:28:46 INFO  : Platform 'HW_Export_V1' is added to custom repositories.
+20:32:15 INFO  : Result from executing command 'getProjects': HW_Export_V1
+20:32:15 INFO  : Result from executing command 'getPlatforms': HW_Export_V1|C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/HW_Export_V1.xpfm
+20:32:29 INFO  : Checking for BSP changes to sync application flags for project 'ParEIS_MSX_SW'...
+20:32:29 INFO  : Updating application flags with new BSP settings...
+20:32:30 INFO  : Successfully updated application flags for project ParEIS_MSX_SW.
+20:33:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:33:07 INFO  : Jtag cable 'Digilent JTAG-HS2 210241115467' is selected.
+20:33:07 INFO  : 'jtag frequency' command is executed.
+20:33:07 INFO  : Context for 'APU' is selected.
+20:33:07 INFO  : System reset is completed.
+20:33:10 INFO  : 'after 3000' command is executed.
+20:33:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 210241115467" && level==0 && jtag_device_ctx=="jsn-JTAG-HS2-210241115467-13722093-0"}' command is executed.
+20:33:13 INFO  : Device configured successfully with "C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/bitstream/HW_Export_V1.bit"
+20:33:13 INFO  : Context for 'APU' is selected.
+20:33:13 INFO  : Hardware design and registers information is loaded from 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/hw/HW_Export_V1.xsa'.
+20:33:13 INFO  : 'configparams force-mem-access 1' command is executed.
+20:33:13 INFO  : Context for 'APU' is selected.
+20:33:13 INFO  : Sourcing of 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/psinit/ps7_init.tcl' is done.
+20:33:15 INFO  : 'ps7_init' command is executed.
+20:33:15 INFO  : 'ps7_post_config' command is executed.
+20:33:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:18 INFO  : The application 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/Debug/ParEIS_MSX_SW.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:33:18 INFO  : 'configparams force-mem-access 0' command is executed.
+20:33:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 210241115467" && level==0 && jtag_device_ctx=="jsn-JTAG-HS2-210241115467-13722093-0"}
+fpga -file C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/bitstream/HW_Export_V1.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/hw/HW_Export_V1.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/Debug/ParEIS_MSX_SW.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:33:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:18 INFO  : 'con' command is executed.
+20:33:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:33:18 INFO  : Disconnected from the channel tcfchan#3.
+20:34:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:34:25 INFO  : Jtag cable 'Digilent JTAG-HS2 210241115467' is selected.
+20:34:25 INFO  : 'jtag frequency' command is executed.
+20:34:25 INFO  : Context for 'APU' is selected.
+20:34:25 INFO  : System reset is completed.
+20:34:28 INFO  : 'after 3000' command is executed.
+20:34:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 210241115467" && level==0 && jtag_device_ctx=="jsn-JTAG-HS2-210241115467-13722093-0"}' command is executed.
+20:34:31 INFO  : Device configured successfully with "C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/bitstream/HW_Export_V1.bit"
+20:34:31 INFO  : Context for 'APU' is selected.
+20:34:31 INFO  : Hardware design and registers information is loaded from 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/hw/HW_Export_V1.xsa'.
+20:34:31 INFO  : 'configparams force-mem-access 1' command is executed.
+20:34:31 INFO  : Context for 'APU' is selected.
+20:34:31 INFO  : Sourcing of 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/psinit/ps7_init.tcl' is done.
+20:34:33 INFO  : 'ps7_init' command is executed.
+20:34:33 INFO  : 'ps7_post_config' command is executed.
+20:34:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:34:35 INFO  : The application 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/Debug/ParEIS_MSX_SW.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:34:36 INFO  : 'configparams force-mem-access 0' command is executed.
+20:34:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 210241115467" && level==0 && jtag_device_ctx=="jsn-JTAG-HS2-210241115467-13722093-0"}
+fpga -file C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/bitstream/HW_Export_V1.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/hw/HW_Export_V1.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW/Debug/ParEIS_MSX_SW.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:34:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:34:36 INFO  : 'con' command is executed.
+20:34:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:34:36 INFO  : Disconnected from the channel tcfchan#4.
+20:37:45 INFO  : Generated template bif file for ParEIS_MSX_SW_system
+20:37:58 INFO  : Invoking Bootgen: bootgen -image ParEIS_MSX_SW_system.bif -arch zynq -o C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW_system/_ide/bootimage/BOOT.bin
+20:38:01 INFO  : Bootgen command execution is done.
+20:38:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:19:47 DEBUG : Logs will be stored at 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/IDE.log'.
+11:19:48 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\temp_xsdb_launch_script.tcl
+11:19:55 INFO  : XSCT server has started successfully.
+11:19:56 INFO  : Platform repository initialization has completed.
+11:19:56 INFO  : plnx-install-location is set to ''
+11:19:56 INFO  : Successfully done setting XSCT server connection channel  
+11:19:56 INFO  : Successfully done query RDI_DATADIR 
+11:19:57 INFO  : Successfully done setting workspace for the tool. 
+11:19:57 INFO  : Registering command handlers for Vitis TCF services
+11:20:13 INFO  : Checking for BSP changes to sync application flags for project 'ParEIS_MSX_SW'...
+11:20:27 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/hw/HW_Export_V1.xsa is already opened
+
+11:22:01 INFO  : Invoking Bootgen: bootgen -image ParEIS_MSX_SW_system.bif -arch zynq -o C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW_system/_ide/bootimage/BOOT.bin -w on
+11:22:05 INFO  : Bootgen command execution is done.
+17:40:14 INFO  : Hardware specification for platform project 'HW_Export_V1' is updated.
+17:43:06 INFO  : Result from executing command 'getProjects': HW_Export_V1
+17:43:06 INFO  : Result from executing command 'getPlatforms': HW_Export_V1|C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/HW_Export_V1.xpfm
+17:43:30 INFO  : Checking for BSP changes to sync application flags for project 'ParEIS_MSX_SW'...
+17:43:32 INFO  : Updating application flags with new BSP settings...
+17:43:33 INFO  : Successfully updated application flags for project ParEIS_MSX_SW.
+17:43:39 INFO  : The hardware specification used by project 'ParEIS_MSX_SW' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+17:43:39 INFO  : The file 'C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\ParEIS_MSX_SW\_ide\bitstream\HW_Export_V1.bit' stored in project is removed.
+17:43:39 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\ParEIS_MSX_SW\_ide\bitstream' in project 'ParEIS_MSX_SW'.
+17:43:39 INFO  : The file 'C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\ParEIS_MSX_SW\_ide\psinit\ps7_init.tcl' stored in project is removed.
+17:43:44 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\ParEIS_MSX_SW\_ide\psinit' in project 'ParEIS_MSX_SW'.
+17:43:52 INFO  : Result from executing command 'removePlatformRepo': 
+17:45:29 INFO  : Result from executing command 'getProjects': HW_Export_V1
+17:45:29 INFO  : Result from executing command 'getPlatforms': 
+17:45:30 INFO  : Checking for BSP changes to sync application flags for project 'ParEIS_MSX_SW'...
+17:50:52 DEBUG : Logs will be stored at 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/IDE.log'.
+17:50:53 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\temp_xsdb_launch_script.tcl
+17:50:57 INFO  : Registering command handlers for Vitis TCF services
+17:50:57 INFO  : Platform repository initialization has completed.
+17:50:59 INFO  : XSCT server has started successfully.
+17:50:59 INFO  : plnx-install-location is set to ''
+17:51:04 INFO  : Successfully done setting XSCT server connection channel  
+17:51:04 INFO  : Successfully done query RDI_DATADIR 
+17:51:04 INFO  : Successfully done setting workspace for the tool. 
+17:51:18 INFO  : Result from executing command 'getProjects': HW_Export_V1
+17:51:18 INFO  : Result from executing command 'getPlatforms': HW_Export_V1|C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/HW_Export_V1.xpfm
+17:51:18 INFO  : Checking for BSP changes to sync application flags for project 'ParEIS_MSX_SW'...
+17:52:45 INFO  : Invoking Bootgen: bootgen -image ParEIS_MSX_SW_system.bif -arch zynq -o C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW_system/_ide/bootimage/BOOT.bin -w on
+17:52:45 INFO  : Overwriting existing bif file C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW_system/_ide/bootimage/ParEIS_MSX_SW_system.bif
+17:52:49 INFO  : Bootgen command execution is done.
+18:03:56 INFO  : Result from executing command 'getProjects': HW_Export_V1
+18:03:56 INFO  : Result from executing command 'getPlatforms': HW_Export_V1|C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/HW_Export_V1/export/HW_Export_V1/HW_Export_V1.xpfm
+18:04:16 INFO  : Result from executing command 'removePlatformRepo': 
+18:05:51 INFO  : Result from executing command 'getProjects': HW_Export_V1
+18:05:51 INFO  : Result from executing command 'getPlatforms': 
+18:05:52 INFO  : Checking for BSP changes to sync application flags for project 'ParEIS_MSX_SW'...
+18:05:52 INFO  : Updating application flags with new BSP settings...
+18:05:52 INFO  : Successfully updated application flags for project ParEIS_MSX_SW.
+18:06:51 INFO  : Invoking Bootgen: bootgen -image ParEIS_MSX_SW_system.bif -arch zynq -o C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/ParEIS_MSX_SW_system/_ide/bootimage/BOOT.bin -w on
+18:06:55 INFO  : Bootgen command execution is done.
+21:06:29 DEBUG : Logs will be stored at 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/IDE.log'.
+21:06:31 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\temp_xsdb_launch_script.tcl
+21:06:36 INFO  : Platform repository initialization has completed.
+21:06:36 INFO  : Registering command handlers for Vitis TCF services
+21:06:39 INFO  : XSCT server has started successfully.
+21:06:39 INFO  : plnx-install-location is set to ''
+21:06:43 INFO  : Successfully done setting XSCT server connection channel  
+21:06:43 INFO  : Successfully done query RDI_DATADIR 
+21:06:43 INFO  : Successfully done setting workspace for the tool. 
+12:17:34 DEBUG : Logs will be stored at 'C:/Users/tillkorsmeier/Desktop/MA/Z7-Nano/ParEIS-MSX/SW/IDE.log'.
+12:17:36 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tillkorsmeier\Desktop\MA\Z7-Nano\ParEIS-MSX\SW\temp_xsdb_launch_script.tcl
+12:17:43 INFO  : Platform repository initialization has completed.
+12:17:44 INFO  : Registering command handlers for Vitis TCF services
+12:17:49 INFO  : XSCT server has started successfully.
+12:17:54 INFO  : plnx-install-location is set to ''
+12:17:54 INFO  : Successfully done setting XSCT server connection channel  
+12:17:54 INFO  : Successfully done query RDI_DATADIR 
+12:17:54 INFO  : Successfully done setting workspace for the tool. 
