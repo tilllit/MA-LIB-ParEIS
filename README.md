@@ -2,7 +2,7 @@
 
 Dieses Repository enthält alle SW und HW Projekte zur Masterarbeit: <br/><br/>
 
-*"Entwicklung eines modularen Systems zur Messdatenerfassung einer elektrochemischen  Impedanzspektroskopie <br/> an parallel geschalteten Lithium-Ionen Zellen."*
+*"Entwicklung eines modularen Systems zur Messdatenerfassung einer elektrochemischen  Impedanzspektroskopie an parallel geschalteten Lithium-Ionen Zellen."*
 <br/><br/>
 
 Enthalten sind folgende Inhalte:
